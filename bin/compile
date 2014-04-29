@@ -30,7 +30,7 @@ function package_download() {
   location="$2"
 
   mkdir -p $location
-  package="http://s3.amazonaws.com/${S3_BUCKET}/${remote}"
+  package="${S3_IMAGE_MAGIC_URL}${remote}"
   curl $package -s -o - | tar xzf - -C $location
 }
 
